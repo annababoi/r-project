@@ -3,16 +3,18 @@ import React from 'react';
 import css from './Car.module.css'
 import {carService} from "../../services";
 
-const Car = ({car, setCars}) => {
+const Car = ({car, setCars, setCarForUpdate}) => {
     const {id, model, price, year} = car;
 
-    const deleteCar = async () => {
-        await carService.deleteById(id);
-        setCars(cars => {
-            const index = cars.findIndex(value => value.id === id);
-            cars.splice(index, 1)
-            return [...cars]
-        })
+    const deleteCar = () => {
+     carService.deleteById(id).then(() => {
+         setCars(cars => {
+             const index = cars.findIndex(value => value.id === id);
+             cars.splice(index, 1)
+             return [...cars]
+         })
+     })
+
     }
 
     return (
@@ -25,11 +27,11 @@ const Car = ({car, setCars}) => {
                 <div>year:{year}</div>
             </div>
             <div className={css.tools}>
-                <button>Update</button>
+                <button onClick={()=>setCarForUpdate(car)}>Update</button>
                 <button onClick={() => deleteCar()}>Delete</button>
             </div>
         </div>
     );
 };
 
-export default Car;
+export {Car};

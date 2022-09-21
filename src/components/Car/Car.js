@@ -6,13 +6,15 @@ import {carService} from "../../services";
 const Car = ({car, setCars}) => {
     const {id, model, price, year} = car;
 
-    const deleteCar = async () => {
-        await carService.deleteById(id);
-        setCars(cars => {
-            const index = cars.findIndex(value => value.id === id);
-            cars.splice(index, 1)
-            return [...cars]
-        })
+    const deleteCar = () => {
+     carService.deleteById(id).then(() => {
+         setCars(cars => {
+             const index = cars.findIndex(value => value.id === id);
+             cars.splice(index, 1)
+             return [...cars]
+         })
+     })
+
     }
 
     return (
@@ -32,4 +34,4 @@ const Car = ({car, setCars}) => {
     );
 };
 
-export default Car;
+export {Car};

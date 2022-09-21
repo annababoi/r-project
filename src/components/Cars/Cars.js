@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import CarForm from "../CarForm/CarForm";
+import {CarForm} from "../CarForm/CarForm";
 import {carService} from "../../services";
-import Car from "../Car/Car";
+import {Car} from "../Car/Car";
 
 const Cars = () => {
     const [cars, setCars] = useState([]);
@@ -19,4 +19,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export  {Cars};

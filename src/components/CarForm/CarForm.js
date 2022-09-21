@@ -37,4 +37,4 @@ const CarForm = ({setCars}) => {
     );
 };
 
-export default CarForm;
+export {CarForm};

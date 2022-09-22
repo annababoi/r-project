@@ -1,10 +1,10 @@
 import React from 'react';
-import {userService} from "../../services";
+import {commentService} from "../../services";
 
 
 
-const User = ({user, setUsers}) => {
-    const {id, name} = user;
+const Comment = ({comment, setComments}) => {
+    const {id, name} = comment;
 
 
 
@@ -16,4 +16,4 @@ const User = ({user, setUsers}) => {
     );
 };
 
-export {User};
+export {Comment};

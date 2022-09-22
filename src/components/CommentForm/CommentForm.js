@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 
-import {userService} from "../../services";
+import {commentService} from "../../services";
 
 
 
 
 
-const UserForm = ({setUsers}) => {
+const CommentForm = ({setComments}) => {
 const {register, handleSubmit, reset, formState:{errors, isValid}} = useForm();
 
-    const submit = async (user) => {
-    const {data} = await userService.create(user)
-        setUsers(users=>[...users, data])
+    const submit = async (comment) => {
+    const {data} = await commentService.create(comment)
+        setComments(comments=>[...comments, data])
         reset();
     }
     return (
@@ -25,4 +25,4 @@ const {register, handleSubmit, reset, formState:{errors, isValid}} = useForm();
     );
 };
 
-export {UserForm};
+export {CommentForm};

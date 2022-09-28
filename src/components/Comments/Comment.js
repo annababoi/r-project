@@ -6,7 +6,7 @@ const {id, name, postId} = comment;
     return(
         <div>
 
-            <Link to={`/comments/posts/${postId}`}><h3>{name}</h3></Link>
+            <Link to={`/comments/${postId}`}><h3>{name}</h3></Link>
         </div>
     );
 };

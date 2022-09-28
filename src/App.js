@@ -23,10 +23,10 @@ function App() {
             </ul>
             <hr/>
             <Routes>
-                <Route path={'/todos'} element={<Todos/>}/>
-                <Route path={'/albums'} element={<Albums/>}/>
-                <Route exact path={'/comments'} element={<Comments/>}>
-                    <Route exact path={'posts/:id'} element={<Post/>}/>
+                <Route path={'todos'} element={<Todos/>}/>
+                <Route path={'albums'} element={<Albums/>}/>
+                <Route exact path={'comments'} element={<Comments/>}>
+                    <Route exact path={':postId'} element={<Post/>}/>
                 </Route>
             </Routes>
         </div>

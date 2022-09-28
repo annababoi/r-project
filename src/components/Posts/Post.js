@@ -4,19 +4,19 @@ import {ApiService} from "../../services/api.service";
 import {useEffect, useState} from "react";
 
 const Post = () => {
-    const {id} = useParams();
-    console.log(id);
+    const {postId} = useParams();
 
     let postsService = new ApiService('posts/')
     const [posts, SetPosts] = useState([]);
 
 
     useEffect(() => {
-        postsService.getSingleData(id).then(value => SetPosts(value))
-    }, [id])
+        postsService.getSingleData(postId).then(value => SetPosts(value))
+    }, [postId])
     return (
         <div>
             <h3>{posts.title}</h3>
+            <hr/>
         </div>
     );
 };

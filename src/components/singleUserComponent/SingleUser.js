@@ -19,7 +19,7 @@ const SingleUser = () => {
 
     return (
         <div>
-            {user && (<SingleUserDetails user={user}/>)}
+            {user && (<SingleUserDetails key={user.id} user={user}/>)}
         </div>
     );
 };

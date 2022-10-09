@@ -10,10 +10,10 @@ function App() {
         <div>
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
-                    <Route path={'/users'} element={<UserPage/>}/>
-                    <Route path={'/users:id'} element={<SingleUserPage/>}/>
-                    <Route path={'/posts'} element={<PostsPage/>}/>
-                    <Route path={'/comments'} element={<CommentsPage/>}/>
+                    <Route path={'users'} element={<UserPage/>}/>
+                        <Route path={'users/:id'} element={<SingleUserPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'comments'} element={<CommentsPage/>}/>
                 </Route>
             </Routes>
         </div>

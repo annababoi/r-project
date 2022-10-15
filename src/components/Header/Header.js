@@ -6,7 +6,9 @@ const Header = () => {
     return (
         <div>
             {currentUser&&currentUser.name}
+            <hr/>
             {currentPost&&currentPost.title}
+            <hr/>
         </div>
     );
 };
